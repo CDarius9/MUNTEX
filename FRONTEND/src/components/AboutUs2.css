@@ -1,0 +1,214 @@
+/* Reset default margins and ensure no overflow */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.about-section2-page {
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.4)
+  ), url(mountains3.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 1rem;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.about-section2-container {
+  max-width: 1200px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+}
+
+.about-section2-content {
+  padding: 3rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.about-section2-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  width: 100%;
+}
+
+.about-section2-mountain-icon {
+  font-size: 3rem;
+  color: #2d5a27;
+  margin-bottom: 1rem;
+}
+
+.about-section2-header h1 {
+  font-size: 3.5rem;
+  color: #1a1a1a;
+  font-weight: 700;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  word-wrap: break-word;
+}
+
+.about-section2-underline {
+  height: 4px;
+  width: 60px;
+  background: #2d5a27;
+  margin: 1rem auto;
+  border-radius: 2px;
+}
+
+.about-section2-lead-text {
+  font-size: 1.5rem;
+  color: #2d5a27;
+  font-weight: 500;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.about-section2-content-grid {
+  display: grid;
+  gap: 4rem;
+  width: 100%;
+}
+
+.about-section2-main-text {
+  width: 100%;
+}
+
+.about-section2-main-text p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 1.5rem;
+  word-wrap: break-word;
+}
+
+.about-section2-values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+  width: 100%;
+}
+
+.about-section2-value-card {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  width: 100%;
+}
+
+.about-section2-value-card:hover {
+  transform: translateY(-5px);
+}
+
+.about-section2-value-icon {
+  font-size: 2.5rem;
+  color: #2d5a27;
+  margin-bottom: 1rem;
+}
+
+.about-section2-value-card h3 {
+  font-size: 1.5rem;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.about-section2-value-card p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.about-section2-offering {
+  background: #f8f9fa;
+  padding: 3rem;
+  border-radius: 15px;
+  margin-top: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.about-section2-offering h2 {
+  font-size: 2.5rem;
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.about-section2-offering p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #333;
+  word-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+  .about-section2-page {
+    padding: 2rem 1rem;
+  }
+
+  .about-section2-content {
+    padding: 2rem;
+  }
+  
+  .about-section2-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .about-section2-lead-text {
+    font-size: 1.3rem;
+  }
+  
+  .about-section2-values-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .about-section2-offering {
+    padding: 2rem;
+  }
+
+  .about-section2-value-card {
+    width: 100%;
+  }
+}
+
+/* Ensure no horizontal overflow on mobile */
+@media (max-width: 480px) {
+  .about-section2-page {
+    padding: 1rem;
+  }
+
+  .about-section2-content {
+    padding: 1.5rem;
+  }
+
+  .about-section2-offering {
+    padding: 1.5rem;
+  }
+}

@@ -1,0 +1,447 @@
+/* Enhanced Hero Section Styling - Simpler Version */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* General Hero Section Styling */
+.hero {
+  position: relative;
+  height: 92vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-attachment: fixed;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('mountains3.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: 'Montserrat', sans-serif;
+  color: #ffffff;
+  text-align: center;
+  padding: 40px;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.hero-loaded .hero-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7));
+  z-index: -1;
+}
+
+/* Hero Logo */
+.hero-logo {
+  margin-bottom: 20px;
+  animation: fadeIn 0.8s ease forwards;
+  opacity: 0;
+}
+
+.hero-logo-icon {
+  font-size: 3.2rem;
+  color: #ffffff;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.3));
+}
+
+/* Titles and Subtitles with Animation */
+.hero-content {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+  max-width: 900px;
+}
+
+.hero-title {
+  font-size: 5rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.6);
+  line-height: 1;
+}
+
+.hero-title-letter {
+  display: inline-block;
+  animation: letterFade 0.5s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.hero-subtitle {
+  font-size: 2.2rem;
+  font-weight: 400;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+  color: #e0e0e0;
+  animation: fadeIn 1s ease 0.7s forwards;
+  opacity: 0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Call-to-Action Buttons with Improved Hover */
+/* Featured Banner */
+.featured-banner {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto 25px;
+  padding: 15px 20px;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  animation: fadeIn 1s ease 0.8s forwards;
+  opacity: 0;
+  transform: translateY(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.featured-badge {
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  background: #fbbf24;
+  color: #000;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.featured-banner p {
+  flex: 1;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.featured-link {
+  margin-left: 15px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+}
+
+.featured-link:hover {
+  border-color: #fff;
+}
+
+.cta-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  animation: fadeIn 1s ease 0.9s forwards;
+  opacity: 0;
+  margin-bottom: 60px;
+}
+
+.cta-button {
+  padding: 15px 40px;
+  font-size: 1.4rem;
+  text-decoration: none;
+  border-radius: 40px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  z-index: 1;
+}
+
+.cta-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  z-index: -1;
+  transition: width 0.3s ease;
+}
+
+.cta-icon {
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.cta-button:hover .cta-icon {
+  transform: rotate(90deg);
+}
+
+.cta-button.primary {
+  background-color: #000;
+  color: #fff;
+  border: 2px solid #000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.cta-button.primary::before {
+  background-color: #fff;
+}
+
+.cta-button.primary:hover {
+  color: #000;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.cta-button.primary:hover::before {
+  width: 100%;
+}
+
+.cta-button.secondary {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button.secondary::before {
+  background-color: #fff;
+}
+
+.cta-button.secondary:hover {
+  color: #000;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.cta-button.secondary:hover::before {
+  width: 100%;
+}
+
+/* Enhanced Hero Highlights */
+.hero-highlights {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-top: 20px;
+  animation: fadeIn 1s ease 1.1s forwards;
+  opacity: 0;
+}
+
+.highlight-item {
+  text-align: center;
+  max-width: 250px;
+  transition: all 0.3s ease;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.highlight-item:hover {
+  transform: translateY(-10px);
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+.highlight-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  width: 80px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.highlight-icon {
+  font-size: 3rem;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.highlight-item:hover .highlight-icon-container {
+  background: linear-gradient(135deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1));
+  transform: rotate(5deg);
+}
+
+.highlight-item:hover .highlight-icon {
+  transform: scale(1.1);
+}
+
+.highlight-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+}
+
+.highlight-item:hover .highlight-title {
+  color: #e0e0e0;
+}
+
+.highlight-item p {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #d1d1d1;
+  transition: all 0.3s ease;
+}
+
+.highlight-item:hover p {
+  color: #ffffff;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: fadeIn 1s ease 1.3s forwards;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.scroll-icon {
+  font-size: 2.2rem;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.scroll-indicator:hover .scroll-icon {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(3px);
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes letterFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+    filter: blur(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(10px);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero {
+    height: auto;
+    min-height: 100vh;
+    padding: 80px 20px 60px;
+  }
+  
+  .hero-highlights {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+  
+  .highlight-item {
+    max-width: 280px;
+  }
+  
+  .hero-title {
+    font-size: 3.8rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.8rem;
+  }
+  
+  .featured-banner {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    padding: 20px 15px;
+  }
+  
+  .featured-link {
+    margin-left: 0;
+    margin-top: 5px;
+  }
+  
+  .cta-container {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    gap: 15px;
+  }
+  
+  .cta-button {
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 12px 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 3.2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+  }
+  
+  .highlight-item p {
+    font-size: 1.1rem;
+  }
+}

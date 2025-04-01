@@ -1,0 +1,387 @@
+/* Navbar.css - Bold dark theme for MUNTEX with explicit positioning */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Custom namespace to avoid conflicts */
+.muntex-navbar-wrapper {
+  --muntex-primary: #f68e56; /* Bright green for visibility on dark */
+  --muntex-primary-hover: #f99762;
+  --muntex-background: #121212; /* Nearly black background */
+  --muntex-surface: #1e1e1e; /* Slightly lighter than background */
+  --muntex-text: #ffffff;
+  --muntex-text-secondary: rgba(255, 255, 255, 0.8);
+  --muntex-text-muted: rgba(255, 255, 255, 0.6);
+  --muntex-border: #333333;
+  --muntex-border-light: #3e3e3e;
+  --muntex-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  --muntex-radius: 4px;
+  --muntex-transition: all 0.2s ease;
+}
+
+/* Base Navbar Styles */
+.muntex-navbar {
+  width: 100%;
+  background-color: var(--muntex-background);
+  border-bottom: 1px solid var(--muntex-border);
+  color: var(--muntex-text);
+  font-family: 'Inter', sans-serif;
+  height: 80px; /* Taller navbar */
+  position: relative;
+  z-index: 1000;
+}
+
+.muntex-navbar-container {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  height: 100%;
+}
+
+/* Logo - Left Section */
+.muntex-navbar-left {
+  justify-self: start;
+}
+
+.muntex-navbar-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.muntex-logo-text {
+  color: var(--muntex-text);
+  font-size: 1.75rem; /* Larger logo text */
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Navigation Links - Center Section */
+.muntex-navbar-center {
+  justify-self: center;
+}
+
+.muntex-navbar-links {
+  display: flex;
+  align-items: center;
+}
+
+.muntex-navbar-links a {
+  color: var(--muntex-text);
+  text-decoration: none;
+  font-size: 1.05rem; /* Larger link text */
+  font-weight: 500;
+  padding: 0.75rem 1.25rem; /* More padding */
+  position: relative;
+  transition: var(--muntex-transition);
+  letter-spacing: 0.3px;
+}
+
+.muntex-navbar-links a:hover {
+  color: var(--muntex-primary);
+}
+
+.muntex-navbar-links a.active {
+  color: var(--muntex-primary);
+  font-weight: 600;
+}
+
+.muntex-navbar-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 1rem;
+  right: 1rem;
+  height: 3px; /* Thicker underline */
+  background-color: var(--muntex-primary);
+}
+
+/* User and Cart Actions - Right Section */
+.muntex-navbar-right {
+  justify-self: end;
+}
+
+.muntex-navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* More space between actions */
+}
+
+/* Auth Buttons */
+.muntex-auth-buttons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.muntex-auth-button {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem; /* Larger button text */
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0.6rem 1.2rem; /* Larger buttons */
+  border-radius: var(--muntex-radius);
+  transition: var(--muntex-transition);
+}
+
+.muntex-login-button {
+  color: var(--muntex-text);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--muntex-border-light);
+}
+
+.muntex-register-button {
+  color: var(--muntex-background);
+  background-color: var(--muntex-primary);
+  border: 1px solid var(--muntex-primary);
+}
+
+.muntex-login-button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.muntex-register-button:hover {
+  background-color: var(--muntex-primary-hover);
+}
+
+/* User Menu */
+.muntex-user-menu-container {
+  position: relative;
+}
+
+.muntex-user-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--muntex-border-light);
+  color: var(--muntex-text);
+  cursor: pointer;
+  width: 40px; /* Larger icon buttons */
+  height: 40px;
+  border-radius: 50%;
+  transition: var(--muntex-transition);
+}
+
+.muntex-user-button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.muntex-user-dropdown {
+  position: absolute;
+  top: calc(100% + 0.75rem);
+  right: 0;
+  width: 240px; /* Wider dropdown */
+  background-color: var(--muntex-surface);
+  border: 1px solid var(--muntex-border);
+  border-radius: var(--muntex-radius);
+  box-shadow: var(--muntex-shadow);
+  overflow: hidden;
+  z-index: 1001;
+}
+
+.muntex-user-dropdown-header {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--muntex-border);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.muntex-user-dropdown-header span {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--muntex-text);
+}
+
+.muntex-user-dropdown-body {
+  padding: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.muntex-user-dropdown-body a {
+  padding: 0.75rem 1.25rem;
+  color: var(--muntex-text-secondary);
+  font-size: 1rem;
+  text-decoration: none;
+  transition: var(--muntex-transition);
+}
+
+.muntex-user-dropdown-body a:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--muntex-text);
+}
+
+.muntex-logout-button {
+  margin: 0.75rem 1.25rem;
+  padding: 0.75rem 0;
+  background: none;
+  color: #f87171; /* Red for logout */
+  border: none;
+  border-top: 1px solid var(--muntex-border);
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: var(--muntex-transition);
+}
+
+.muntex-logout-button:hover {
+  color: #ef4444;
+}
+
+/* Cart */
+.muntex-cart-container {
+  position: relative;
+}
+
+.muntex-cart-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--muntex-border-light);
+  color: var(--muntex-text);
+  cursor: pointer;
+  width: 40px; /* Larger icon buttons */
+  height: 40px;
+  border-radius: 50%;
+  transition: var(--muntex-transition);
+}
+
+.muntex-cart-button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.muntex-cart-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 20px; /* Larger badge */
+  height: 20px;
+  background-color: var(--muntex-primary);
+  color: var(--muntex-background);
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Mobile Menu Toggle */
+.muntex-mobile-menu-toggle {
+  display: none;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--muntex-border-light);
+  color: var(--muntex-text);
+  cursor: pointer;
+  padding: 0.5rem;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--muntex-radius);
+  align-items: center;
+  justify-content: center;
+  transition: var(--muntex-transition);
+}
+
+.muntex-mobile-menu-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .muntex-navbar-links a {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 960px) {
+  .muntex-navbar-container {
+    grid-template-columns: auto 1fr auto;
+  }
+  
+  .muntex-navbar-center {
+    justify-self: start;
+    margin-left: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .muntex-navbar-container {
+    grid-template-columns: auto auto;
+  }
+  
+  .muntex-mobile-menu-toggle {
+    display: flex;
+    grid-column: 2;
+    justify-self: end;
+  }
+  
+  .muntex-navbar-center {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: 100%;
+    margin-left: 0;
+    justify-self: center;
+  }
+  
+  .muntex-navbar-right {
+    margin-right: 1rem;
+  }
+  
+  .muntex-navbar-links {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: var(--muntex-background);
+    border-bottom: 1px solid var(--muntex-border);
+    box-shadow: var(--muntex-shadow);
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+  }
+  
+  .muntex-navbar-links.mobile-open {
+    max-height: 350px;
+    padding: 0.5rem 0;
+  }
+  
+  .muntex-navbar-links a {
+    width: 100%;
+    padding: 1rem 1.5rem;
+  }
+  
+  .muntex-navbar-links a.active::after {
+    bottom: auto;
+    top: 0;
+    left: 0;
+    right: auto;
+    height: 100%;
+    width: 3px;
+  }
+}
+
+@media (max-width: 480px) {
+  .muntex-navbar-container {
+    padding: 0 1rem;
+  }
+  
+  .muntex-logo-text {
+    font-size: 1.5rem;
+  }
+  
+  .muntex-auth-buttons .muntex-login-button {
+    display: none;
+  }
+  
+  .muntex-auth-button.muntex-register-button {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+  }
+}
